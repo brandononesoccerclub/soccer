@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Brandon United Soccer Club home page featuring news, registration, teams, and match updates.">
+    <title>Brandon United Soccer Club</title>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="brand" aria-label="Brandon United Soccer Club home">
+        <img src="images/club-logo.png" alt="Brandon United Soccer Club logo" class="club-logo" width="80" height="80" loading="eager">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="pages/teams.html">Teams</a>
+        <a href="pages/schedule.html">Schedule</a>
+        <a href="pages/gallery.html">Gallery</a>
+        <a href="pages/blog.html">Blog</a>
+        <a href="pages/profile.html">Players</a>
+        <a href="pages/signup.html">Signup</a>
+      </nav>
+
+      <aside class="match-result" aria-label="Latest match result">
+        <button class="score-toggle" type="button" aria-expanded="false" aria-controls="match-summary-panel">
+          <span class="score-label">Score:</span>
+          <span class="team red-team">Red</span>
+          <span class="score-value red-value" id="match-red-score">1</span>
+          <span class="score-separator">-</span>
+          <span class="team blue-team">Blue</span>
+          <span class="score-value blue-value" id="match-blue-score">1</span>
+          <span class="match-date" id="match-date">[9/26/2026]</span>
+        </button>
+
+        <div id="match-summary-panel" class="summary-panel" hidden>
+          <p id="match-summary-text" class="summary">Last match played on 9/26/2026. Niraj Sardar scored for the Red team, while Rashid Ahmed scored a header goal for the Blue team. Final score: Red 1, Blue 1.</p>
+          <div class="history-block">
+            <h3>Recent Results</h3>
+            <ul id="match-history-list">
+              <li>Red 1 - Blue 1 <span>Sep 26, 2026</span></li>
+              <li>Red 4 - Blue 1 <span>Sep 19, 2026</span></li>
+              <li>Red 2 - Blue 2 <span>Sep 12, 2026</span></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Welcome to Brandon United Soccer Club">
+        <div class="hero-content">
+          <h1>Brandon United Soccer Club</h1>
+          <p>Community • Teamwork • Passion</p>
+          <a href="pages/register.html" class="cta-button">Register Now</a>
+        </div>
+      </section>
+
+      <section class="welcome-section" aria-labelledby="welcome-heading">
+        <div class="welcome-copy">
+          <span class="welcome-kicker">Our Mission</span>
+          <h2 id="welcome-heading">Welcome to Our Club</h2>
+          <p>We are a community-focused non-profit soccer club based in Brandon, FL.</p>
+          <div class="welcome-actions">
+            <a href="pages/contact.html" class="secondary-link">Contact</a>
+            <a href="pages/login.html" class="secondary-link">Member Login</a>
+          </div>
+        </div>
+        <div class="welcome-badges" aria-label="Club values">
+          <span>Community</span>
+          <span>Teamwork</span>
+          <span>Passion</span>
+        </div>
+      </section>
+
+      <section class="news-section" aria-labelledby="news-heading">
+        <div class="news-header">
+          <h2 id="news-heading">Latest News</h2>
+          <span class="news-badge">Update</span>
+        </div>
+        <ul class="news-list">
+          <li><span class="news-tag">Anniversary</span> Our club anniversary is coming up on Sep 29th.</li>
+          <li><span class="news-tag">Registration</span> Fall season registration is now open.</li>
+          <li><span class="news-tag">Tryouts</span> Tryouts next Saturday at 9 AM.</li>
+        </ul>
+      </section>
+
+      <section class="blog-section" id="blog-submit" aria-labelledby="blog-heading">
+        <div class="blog-intro">
+          <span class="blog-kicker">Community Blog</span>
+          <h2 id="blog-heading">Share the Story</h2>
+          <p>Community contributions are temporarily paused while club services are being reconfigured.</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card featured">
+            <span class="blog-label">Featured</span>
+            <h3>Matchday Thoughts</h3>
+            <p>From training updates to unforgettable moments on the pitch, this is your space to share what matters most.</p>
+          </article>
+
+          <article class="blog-card">
+            <span class="blog-label">Popular</span>
+            <h3>Player Spotlight</h3>
+            <p>Celebrate standout performances, rising talent, and the stories behind your favorite players.</p>
+          </article>
+        </div>
+
+        <div class="blog-cta-row">
+          <a href="pages/blog.html" class="secondary-link">View Blog Posts</a>
+        </div>
+
+        <p class="blog-submit-message" role="status">Blog submissions are temporarily unavailable.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Brandon United Soccer Club</p>
+    </footer>
+
+    <script>
+      const scoreToggle = document.querySelector('.score-toggle');
+      const summaryPanel = document.getElementById('match-summary-panel');
+
+      if (scoreToggle && summaryPanel) {
+        scoreToggle.addEventListener('click', () => {
+          const isOpen = !summaryPanel.hidden;
+          summaryPanel.hidden = isOpen;
+          scoreToggle.setAttribute('aria-expanded', String(!isOpen));
+        });
+      }
+    </script>
+  </body>
+</html>

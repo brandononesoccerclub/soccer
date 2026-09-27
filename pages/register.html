@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Register a player for Brandon United Soccer Club.">
+    <title>Player Registration - Brandon United Soccer Club</title>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="../index.html" class="brand" aria-label="Brandon United Soccer Club home">
+        <img src="../images/club-logo.png" alt="Brandon United Soccer Club logo" class="club-logo" width="80" height="80" loading="eager">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="register.html" aria-current="page">Register</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="registration-form" aria-labelledby="register-heading">
+        <h2 id="register-heading">Register a Player</h2>
+
+        <form id="registration-form" action="#" method="post">
+          <label for="player-name">Player Name</label>
+          <input id="player-name" name="playerName" type="text" required>
+
+          <label for="player-age">Age</label>
+          <input id="player-age" name="age" type="number" min="4" max="18" required>
+
+          <label for="guardian-name">Parent/Guardian Name</label>
+          <input id="guardian-name" name="guardianName" type="text" required>
+
+          <label for="player-email">Email</label>
+          <input id="player-email" name="email" type="email" required>
+
+          <label for="player-phone">Phone</label>
+          <input id="player-phone" name="phone" type="tel" required>
+
+          <label for="team-select">Select Team</label>
+          <select id="team-select" name="team" required>
+            <option value="">Choose a team</option>
+            <option value="u8">U8</option>
+            <option value="u10">U10</option>
+            <option value="u12">U12</option>
+            <option value="u14">U14</option>
+            <option value="ages19to21">Ages 19–21</option>
+            <option value="over21">Over 21 years</option>
+          </select>
+
+          <label for="player-comments">Comments</label>
+          <textarea id="player-comments" name="comments" rows="4"></textarea>
+
+          <div class="registration-honeypot" aria-hidden="true">
+            <label for="website">Leave this field blank</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button id="registration-submit" type="submit" disabled>Submit Registration</button>
+          <p id="registration-submit-status" role="status" aria-live="polite">Registration storage is not connected yet.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Brandon United Soccer Club</p>
+    </footer>
+    <script src="register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View photos from Brandon United Soccer Club games, practices, and team events.">
+    <title>Photo Gallery - Brandon United Soccer Club</title>
+    <link rel="preload" href="../styles.css" as="style">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="../index.html" class="brand" aria-label="Brandon United Soccer Club home">
+        <img src="../images/club-logo.png" alt="Brandon United Soccer Club logo" class="club-logo" width="80" height="80" loading="eager">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="register.html">Register</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="gallery" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading">Club Moments</h2>
+
+        <div class="gallery-upload">
+          <label class="gallery-upload-button" for="gallery-upload-input">Add photos</label>
+          <input id="gallery-upload-input" class="sr-only" type="file" accept="image/*" multiple>
+          <p id="gallery-upload-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="../images/1.jpeg" alt="Team photo" loading="lazy">
+          <img src="../images/2.jpeg" alt="Match day action" loading="lazy">
+          <img src="../images/3.jpeg" alt="Training session" loading="lazy">
+          <img src="../images/4.jpeg" alt="Goal celebration" loading="lazy">
+          <img src="../images/5.jpeg" alt="Team photo at practice" loading="lazy">
+          <img src="../images/6.jpeg" alt="Soccer team lineup" loading="lazy">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Brandon United Soccer Club</p>
+    </footer>
+    <script src="gallery.js"></script>
+  </body>
+</html>
